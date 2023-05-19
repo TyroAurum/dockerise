@@ -1,0 +1,9 @@
+FROM node:alpine AS development
+ENV NODE_ENV development
+WORKDIR /dockerised
+COPY ./package.json /dockerised
+RUN npm install
+COPY . .
+CMD npm start
+
+
